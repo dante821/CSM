@@ -2,13 +2,13 @@
 const products = [
     { 
         id: 1, 
-        name: "Смартфон Xiaomi Redmi Note 10 Pro 8/128GB", 
+        name: "A2 Постер CSM Elite 2023", 
         price: 24990, 
         oldPrice: 27990, 
-        image: "img/phone1.jpg",
+        image: "img/csmA2.jpg",
         rating: 4.8,
         reviews: 1254,
-        category: "Электроника",
+        category: "Интерьер и декор",
         brand: "Xiaomi"
     },
     { 
