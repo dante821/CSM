@@ -852,3 +852,14 @@ h1 {
 p {
     font-size: min(4vw, 16px);
 }
+html {
+    overflow-x: hidden;
+}
+{
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+button, a {
+    min-width: 48px;
+    min-height: 48px;
+}
