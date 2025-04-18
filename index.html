@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="wb-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                     CSM
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Найти товар">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="/login" class="login-link"><i class="far fa-user"></i> Войти</a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#" class="cart-link"><i class="fas fa-shopping-cart"></i> Корзина <span id="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="categories">
+            <div class="container">
+                <a href="#">Женщинам</a>
+                <a href="#">Мужчинам</a>
+                <a href="#">Детям</a>
+                <a href="#">Дом</a>
+                <a href="#">Красота</a>
+                <a href="#">Аксессуары</a>
+                <a href="#">Электроника</a>
+                <a href="#">Игрушки</a>
+                
+                <!-- Добавьте переключатель темы сюда -->
+                <div class="theme-switcher-container">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                    <label for="theme-toggle" class="theme-label">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                        <span class="theme-ball"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="#">Главная</a> > <a href="#">Каталог</a> > <span>Все товары</span>
+        </div>
+        
+        <div class="content-wrapper">
+            <aside class="filters">
+                <h3>Фильтры</h3>
+                <div class="filter-section">
+                    <h4>Цена, ₽</h4>
+                    <div class="price-range">
+                        <input type="number" placeholder="от" id="min-price">
+                        <span>-</span>
+                        <input type="number" placeholder="до" id="max-price">
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>Категории</h4>
+                    <label><input type="checkbox"> Электроника</label>
+                    <label><input type="checkbox"> Одежда</label>
+                    <label><input type="checkbox"> Обувь</label>
+                    <label><input type="checkbox"> Аксессуары</label>
+                </div>
+                <div class="filter-section">
+                    <h4>Бренды</h4>
+                    <label><input type="checkbox"> Apple</label>
+                    <label><input type="checkbox"> Samsung</label>
+                    <label><input type="checkbox"> Xiaomi</label>
+                    <label><input type="checkbox"> Huawei</label>
+                </div>
+                <button class="apply-filters">Применить</button>
+            </aside>
+
+            <section class="products">
+                <div class="sort-options">
+                    <span style="color: #000000 ">Сортировка:</span>
+                    <select>
+                        <option>По популярности</option>
+                        <option>По цене (сначала дешевые)</option>
+                        <option>По цене (сначала дорогие)</option>
+                        <option>По новизне</option>
+                        <option>По рейтингу</option>
+                    </select>
+                </div>
+
+                <div class="product-grid" id="products">
+                    <!-- Товары будут загружены через JavaScript -->
+                </div>
+
+                <div class="pagination">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wb-footer">
+        <div class="container">
+            <div class="footer-section">
+                <h4>Покупателям</h4>
+                <a href="#">Как сделать заказ</a>
+                <a href="#">Доставка</a>
+                <a href="#">Оплата</a>
+                <a href="#">Возврат</a>
+            </div>
+            <div class="footer-section">
+                <h4>Компания</h4>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+                <a href="#">Вакансии</a>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (495) 123-45-67</p>
+                <p>support@wbstyle.ru</p>
+                <div class="social-icons">
+                    <a href="https://vk.com/csmpro?from=search"><i class="fab fa-vk"></i></a>
+                    <a href="https://t.me/csmpro"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 CSM - Все права защищены
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
