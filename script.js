@@ -226,6 +226,3 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('.categories').classList.toggle('active');
 });
-console.log('Ширина экрана:', window.innerWidth, 'px');
-console.log('Плотность пикселей:', window.devicePixelRatio);
-console.log('User Agent:', navigator.userAgent);
