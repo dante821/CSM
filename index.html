@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff2e57"> 
 </head>
 <body>
     <header class="wb-header">
@@ -59,32 +61,35 @@
         </div>
         
         <div class="content-wrapper">
-            <aside class="filters">
-                <h3>Фильтры</h3>
-                <div class="filter-section">
-                    <h4>Цена, ₽</h4>
-                    <div class="price-range">
-                        <input type="number" placeholder="от" id="min-price">
-                        <span>-</span>
-                        <input type="number" placeholder="до" id="max-price">
-                    </div>
-                </div>
-                <div class="filter-section">
-                    <h4>Категории</h4>
-                    <label><input type="checkbox"> Электроника</label>
-                    <label><input type="checkbox"> Одежда</label>
-                    <label><input type="checkbox"> Обувь</label>
-                    <label><input type="checkbox"> Аксессуары</label>
-                </div>
-                <div class="filter-section">
-                    <h4>Бренды</h4>
-                    <label><input type="checkbox"> Apple</label>
-                    <label><input type="checkbox"> Samsung</label>
-                    <label><input type="checkbox"> Xiaomi</label>
-                    <label><input type="checkbox"> Huawei</label>
-                </div>
-                <button class="apply-filters">Применить</button>
-            </aside>
+<!-- Только один блок фильтров -->
+<div class="filters">
+    <h3>Фильтры</h3>
+    
+    <!-- Фильтр по цене -->
+    <div class="filter-section">
+        <h4>Цена, ₽</h4>
+        <div class="price-range">
+            <input type="number" id="min-price" placeholder="от" min="0">
+            <span>-</span>
+            <input type="number" id="max-price" placeholder="до" min="0">
+        </div>
+    </div>
+    
+    <!-- Фильтр по категориям -->
+    <div class="filter-section">
+        <h4>Категории</h4>
+        <div class="category-options">
+            <label><input type="checkbox" name="category" value="electronics"> Электроника</label>
+            <label><input type="checkbox" name="category" value="clothing"> Одежда</label>
+            <label><input type="checkbox" name="category" value="home"> Интерьер и декор</label>
+            <label><input type="checkbox" name="category" value="accessories"> Аксессуары</label>
+        </div>
+    </div>
+    
+    <button id="apply-filters" class="apply-filters">Применить</button>
+</div>
+
+
 
             <section class="products">
                 <div class="sort-options">
@@ -125,9 +130,7 @@
             </div>
             <div class="footer-section">
                 <h4>Компания</h4>
-                <a href="#">О нас</a>
-                <a href="#">Контакты</a>
-                <a href="#">Вакансии</a>
+                <a href="https://c.csmplay.ru/welcome ">Вакансии</a>
             </div>
             <div class="footer-section">
                 <h4>Контакты</h4>
@@ -140,9 +143,18 @@
             </div>
         </div>
         <div class="copyright">
-            © 2023 CSM - Все права защищены
+            © 2025 CSM - Все права защищены
         </div>
     </footer>
+    <button class="menu-toggle">☰</button>
+    <nav class="mobile-menu">
+        <a href="#">Каталог</a>
+        <a href="#">Корзина</a>
+    </nav>
+    <picture>
+        <source media="(max-width: 600px)" srcset="img/product-mobile.jpg">
+        <img src="img/product-desktop.jpg" alt="Товар">
+    </picture>
 
     <script src="script.js"></script>
 </body>

@@ -3,91 +3,31 @@ const products = [
     { 
         id: 1, 
         name: "A2 Постер CSM Elite 2023", 
-        price: 24990, 
-        oldPrice: 27990, 
+        price: 500, 
         image: "img/csmA2.jpg",
         rating: 4.8,
         reviews: 1254,
         category: "Интерьер и декор",
-        brand: "Xiaomi"
     },
     { 
         id: 2, 
-        name: "Наушники Apple AirPods Pro", 
-        price: 17990, 
-        oldPrice: 19990, 
-        image: "img/airpods.jpg",
+        name: "A3 Постер CSM Elite 2023", 
+        price: 350, 
+        image: "img/csmA3.jpg",
         rating: 4.9,
         reviews: 3567,
-        category: "Электроника",
-        brand: "Apple"
+        category: "Интерьер и декор",
     },
     { 
         id: 3, 
-        name: "Фитнес-браслет Xiaomi Mi Band 6", 
-        price: 3490, 
-        oldPrice: 3990, 
-        image: "img/miband.jpg",
+        name: "Наклейка CSM Виниловая", 
+        price: 60, 
+        image: "img/csmsk.jpg",
         rating: 4.7,
         reviews: 8923,
-        category: "Электроника",
-        brand: "Xiaomi"
+        category: "Интерьер и декор",
     },
-    { 
-        id: 4, 
-        name: "Кроссовки мужские Nike Air Max", 
-        price: 8990, 
-        oldPrice: 10990, 
-        image: "img/nike.jpg",
-        rating: 4.6,
-        reviews: 567,
-        category: "Обувь",
-        brand: "Nike"
-    },
-    { 
-        id: 5, 
-        name: "Футболка мужская Adidas", 
-        price: 2490, 
-        oldPrice: 2990, 
-        image: "img/tshirt.jpg",
-        rating: 4.5,
-        reviews: 234,
-        category: "Одежда",
-        brand: "Adidas"
-    },
-    { 
-        id: 6, 
-        name: "Чехол для iPhone 13 Pro", 
-        price: 990, 
-        oldPrice: 1290, 
-        image: "img/iphone-case.jpg",
-        rating: 4.3,
-        reviews: 456,
-        category: "Аксессуары",
-        brand: "Apple"
-    },
-    { 
-        id: 7, 
-        name: "Ноутбук ASUS VivoBook 15", 
-        price: 54990, 
-        oldPrice: 59990, 
-        image: "img/laptop.jpg",
-        rating: 4.7,
-        reviews: 789,
-        category: "Электроника",
-        brand: "ASUS"
-    },
-    { 
-        id: 8, 
-        name: "Умные часы Samsung Galaxy Watch 4", 
-        price: 19990, 
-        oldPrice: 22990, 
-        image: "img/galaxy-watch.jpg",
-        rating: 4.8,
-        reviews: 1234,
-        category: "Электроника",
-        brand: "Samsung"
-    }
+
 ];
 
 // Корзина
@@ -245,4 +185,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     initTheme();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const applyBtn = document.getElementById('apply-filters');
+    
+    applyBtn.addEventListener('click', function() {
+        // Получаем выбранные категории
+        const selectedCategories = Array.from(
+            document.querySelectorAll('input[name="category"]:checked')
+        ).map(checkbox => checkbox.value);
+        
+        // Получаем диапазон цен
+        const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+        const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+        
+        // Фильтруем товары
+        filterProducts(selectedCategories, minPrice, maxPrice);
+    });
+    
+    function filterProducts(categories, minPrice, maxPrice) {
+        const products = document.querySelectorAll('.product-card');
+        
+        products.forEach(product => {
+            const productCategory = product.dataset.category;
+            const productPrice = parseFloat(product.dataset.price);
+            
+            // Проверяем соответствие фильтрам
+            const categoryMatch = categories.length === 0 || categories.includes(productCategory);
+            const priceMatch = productPrice >= minPrice && productPrice <= maxPrice;
+            
+            if (categoryMatch && priceMatch) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.categories').classList.toggle('active');
 });
