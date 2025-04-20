@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSM - Интернет-магазин</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#ff2e57">
+</head>
+<body>
+    <header class="wb-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">CSM</div>
+                <div class="search-box">
+                    <input type="text" placeholder="Найти товар">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="categories">
+            <div class="container">
+                <a href="#">Магазин</a>
+                <a href="C:\Users\Леонид\Desktop\CSM-main\CSM-main\tornirs\tournirs.html">Турниры</a>
+                <a href="C:\Users\Леонид\Desktop\CSM-main\CSM-main\shodki\shodki.html">Сходки</a>
+                <a href="C:\Users\Леонид\Desktop\CSM-main\CSM-main\tickets\tickets.html">Билеты</a>
+                
+                <div class="theme-switcher-container">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                    <label for="theme-toggle" class="theme-label">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                        <span class="theme-ball"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <div class="filters">
+                <h3>Фильтры</h3>
+                
+                <div class="filter-section">
+                    <h4>Цена, ₽</h4>
+                    <div class="price-range">
+                        <input type="number" id="min-price" placeholder="от" min="0">
+                        <span>-</span>
+                        <input type="number" id="max-price" placeholder="до" min="0">
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h4>Категории</h4>
+                    <label><input type="checkbox" name="category" value="posters"> Постеры</label>
+                    <label><input type="checkbox" name="category" value="merch"> Мерч</label>
+                </div>
+                
+                <button id="apply-filters" class="apply-filters">Применить</button>
+                <button id="reset-filters" class="reset-filters">Сбросить</button>
+            </div>
+            
+            <section class="products">
+                <div class="sort-options">
+                    <span>Сортировка:</span>
+                    <select id="sort-select">
+                        <option value="popular">По популярности</option>
+                        <option value="price-asc">По цене (сначала дешевые)</option>
+                        <option value="price-desc">По цене (сначала дорогие)</option>
+                        <option value="newest">По новизне</option>
+                        <option value="rating">По рейтингу</option>
+                    </select>
+                </div>
+                
+                <div class="product-grid" id="product-grid">
+                    <!-- Товары будут загружены через JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Корзина -->
+    <div class="cart-icon" id="cart-icon">
+        <span id="cart-count">0</span>
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+    
+    <div id="cart-dropdown" class="cart-dropdown">
+        <div id="cart-items"></div>
+        <div class="cart-total">Итого: <span id="total-price">0</span> ₽</div>
+        <button id="checkout-btn">Оформить заказ</button>
+    </div>
+
+    <footer class="wb-footer">
+        <div class="container">
+            <div class="footer-section">
+                <h4>Покупателям</h4>
+                <details>
+                    <summary>Как сделать заказ</summary>
+                    <div class="order-info">
+                        <p>1. Выберите товар<br>
+                        2. Нажмите "В корзину"<br>
+                        3. Перейдите в корзину<br>
+                        4. Заполните данные<br>
+                        5. Подтвердите заказ</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Доставка</summary>
+                    <div class="order-info">
+                        <p>Доставка осуществляется курьером или почтой России в течение 3-5 рабочих дней после оформления заказа.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Оплата</summary>
+                    <div class="order-info">
+                        <p>Мы принимаем карты Visa, Mastercard, МИР, а также электронные платежи через Яндекс.Деньги и Qiwi.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Возврат</summary>
+                    <div class="order-info">
+                        <p>Вы можете вернуть товар в течение 14 дней с момента получения, если он не был в употреблении.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="footer-section">
+                <h4>Компания</h4>
+                <a href="https://c.csmplay.ru/welcome">Вакансии</a>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (495) 123-45-67</p>
+                <p>support@csm.ru</p>
+                <div class="social-icons">
+                    <a href="https://vk.com/csmpro?from=search"><i class="fab fa-vk"></i></a>
+                    <a href="https://t.me/csmpro"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 CSM - Все права защищены
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
