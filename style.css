@@ -620,3 +620,139 @@ summary {
         right: 20px;
     }
 }
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    /* Улучшаем шапку */
+    .header-top {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    .search-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Улучшаем навигацию */
+    .categories {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 8px 0;
+    }
+    
+    .categories a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    /* Улучшаем фильтры */
+    .filters {
+        width: 100%;
+        position: static;
+        margin-bottom: 15px;
+    }
+    
+    .price-range {
+        flex-direction: column;
+    }
+    
+    .price-range input {
+        width: 100%;
+    }
+    
+    .price-range span {
+        display: none;
+    }
+    
+    /* Улучшаем карточки товаров */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .product-card {
+        margin-bottom: 0;
+    }
+    
+    /* Улучшаем корзину */
+    .cart-dropdown {
+        width: 90%;
+        right: 5%;
+        bottom: 80px;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-title {
+        font-size: 14px;
+    }
+    
+    .product-price {
+        font-size: 16px;
+    }
+    
+    .add-to-cart {
+        padding: 6px;
+        font-size: 13px;
+    }
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        order: -1;
+    }
+    
+    .categories {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        z-index: 100;
+    }
+    
+    .categories.active {
+        display: flex;
+    }
+    
+    .categories a {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+@media (max-width: 480px) {
+    .search-box input {
+        padding: 8px 12px;
+    }
+    
+    .search-box button {
+        padding: 8px 12px;
+    }
+}
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
