@@ -322,3 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initTheme();
 });
+// Закрытие мобильного меню при клике вне его
+document.addEventListener('click', function(e) {
+    const menu = document.querySelector('.categories');
+    const toggle = document.getElementById('menu-toggle');
+    
+    if (!menu.contains(e.target) && e.target !== toggle) {
+        menu.classList.remove('active');
+    }
+});
